@@ -1,7 +1,7 @@
 make_fun_1 <- function() {
   function(x) {
-    1 + 1
     2 + 2
+    1 + 1
     cat("fun1\n")
   }
 }
@@ -17,14 +17,6 @@ make_fun_3 <- function() {
     3 + 3
     1 + 1
     cat("fun3\n")
-  }
-}
-
-make_fun_1 <- function() {
-  function(x) {
-    1 + 1
-    2 + 2
-    cat("fun1\n")
   }
 }
 #' @export
