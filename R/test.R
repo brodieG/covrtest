@@ -7,16 +7,9 @@ make_fun_1 <- function() {
 }
 make_fun_2 <- function() {
   function(x) {
-    2 + 2
-    1 + 1
-    cat("fun2\n")
-  }
-}
-make_fun_3 <- function() {
-  function(x) {
     3 + 3
-    1 + 1
-    cat("fun3\n")
+    4 + 4
+    cat("fun2\n")
   }
 }
 #' @export
@@ -25,25 +18,39 @@ fun1 <- make_fun_1()
 
 #' @export
 
-fun3 <- make_fun_3()
-
-#' @export
-
-fun4 <- function(x) {
-  1 + 1
+fun2 <- function(x) {
   2 + 2
-  cat("fun4\n")
+  1 + 1
+  cat("fun2\n")
 }
-fun5 <- fun4
-
 #' @export
 
-setGeneric("fun2", function(x) StandardGeneric("fun2"))
+fun3 <- function() {
 
+  if(FALSE) {
+    1
+  } else {
+    2
+  }
+  if(FALSE) 3 else 4
+  if(FALSE) {3} else {4}
+
+  if(TRUE) 3 else {1 + 1
+    2 + 2
+  }
+  {1 + 1; 2 + 2}; if(FALSE) 1 else 2; {TRUE}
+  {1 + 1; 2 + 2}; "hello"; {TRUE}
+  if(TRUE) {
+    {1 + 1; 2 + 2}; "hello"; {TRUE}
+    {1 + 1; 2 + 2}; if(FALSE) 1 else 2; {TRUE}
+  } else {
+    {1 + 1; 2 + 2}; "hello"; {TRUE}
+    {1 + 1; 2 + 2}; if(FALSE) 1 else 2; {TRUE}
+  }
+}
 #' @export
 
-setMethod("fun2", "integer", make_fun_2())
+setGeneric("fun4", function(x) StandardGeneric("fun2"))
 
-#' @export
-
-setMethod("fun2", "numeric", fun3)
+setMethod("fun4", "integer", make_fun_2())
+setMethod("fun4", "numeric", make_fun_1())
