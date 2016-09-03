@@ -1,7 +1,4 @@
 library(covrtest)
 
-fun1()
-fun2()
-fun3()
-fun4(1)
-fun4(1L)
+fun.list$fun2(2)
+fun(3)
